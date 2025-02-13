@@ -1,0 +1,580 @@
+/* General Reset */  
+* {  
+    margin: 0;  
+    padding: 0;  
+    box-sizing: border-box;  
+  }  
+  
+  /* Body Style */  
+  body {  
+    background-color: #000112; /* Dark background for contrast */  
+    color: #ffffff;            /* White text color */  
+    font-family: Arial, sans-serif;  
+    transition: background-color 0.5s ease, color 0.5s ease;  
+    text-align: center; /* Center text for main layout */  
+  }  
+  
+  /* App container: Sidebar + Content layout */  
+  .app-container {  
+    display: flex;  
+    min-height: 100vh;  
+    background-color: #f8f9fa;  
+  }  
+  
+  /* Sidebar styles */  
+  .sidebar {  
+    background-color: #343a40;  
+    padding: 20px;  
+    color: white;  
+    height: 100vh;  
+    width: 220px; /* Sidebar width */  
+  }  
+  
+  /* Content section */  
+  .content {  
+    flex-grow: 1;  
+    display: flex;  
+    flex-direction: column;  
+    background-color: #fff;  
+    padding: 20px;  
+  }  
+  
+  /* Header styles */  
+  header {  
+    background-color: #343a40; /* Dark background for the navbar */  
+    padding: 15px;  
+  }  
+  
+  /* Navbar Style */  
+  .navbar {  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center;  
+    padding: 10px 20px;  
+  }  
+  
+  /* Navbar content */  
+  .nav-links {  
+    list-style: none;  
+    display: flex;  
+    margin: 0;  
+    padding: 0;  
+  }  
+  
+  .nav-links li {  
+    margin-left: 20px;  
+  }  
+  
+  .nav-links a {  
+    text-decoration: none;  
+    color: white;  
+    font-weight: bold;  
+    padding: 0.5rem 1rem; /* Padding inside the links */  
+    transition: background-color 0.3s; /* Smooth background color change */  
+  }  
+  
+  /* Change link color on hover */  
+  .nav-links a:hover {  
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly lighter on hover */  
+    border-radius: 4px; /* Rounded corners on hover */  
+  }  
+  
+  /* Active link style */  
+  .nav-links a.active {  
+    background-color: rgba(255, 255, 255, 0.3); /* Highlight active link */  
+  }  
+  
+  /* Search form styles */  
+  .search-form {  
+    display: flex;  
+    align-items: center;  
+  }  
+  
+  .search-form input[type="text"] {  
+    border: none;  
+    padding: 8px;  
+    border-radius: 4px;  
+    margin-right: 5px;  
+    background-color: #2c2c2c; /* Dark background for search input */  
+    color: #ffffff; /* White text color */  
+  }  
+  
+  .search-form button {  
+    padding: 8px 12px;  
+    border: none;  
+    border-radius: 4px;  
+    background-color: #007bff; /* Button color */  
+    color: white;  
+    cursor: pointer;  
+  }  
+  
+  .search-form button:hover {  
+    background-color: #0056b3; /* Darker on hover */  
+  }  
+  
+  /* Form styles */  
+  .form-container {  
+    background-color: #252525;  
+    padding: 20px;  
+    border-radius: 8px;  
+    margin: 20px auto; /* Centering */  
+    max-width: 600px;  /* Maximum width for forms */  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);  
+    opacity: 0; /* Start invisible for animation */  
+    transform: translateY(20px); /* Start slightly lower for effect */  
+    animation: slideIn 0.5s forwards; /* Adding slide-in effect */  
+  }  
+  
+  /* Input and Button Styles */  
+  input[type="file"], button {  
+    margin: 10px 0;  
+    padding: 8px;  
+    width: 100%; /* Make inputs full width */  
+    border: none;  
+    border-radius: 4px;  
+    background-color: #3a3a3a;  
+    color: #ffffff;  
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */  
+  }  
+  
+  input[type="file"]:hover {  
+    background-color: #4a4a4a; /* Change background on hover */  
+    transform: scale(1.02); /* Slightly grow on hover */  
+  }  
+  
+  button {  
+      background-color: #007bff; /* Button color */  
+  }  
+  
+  button:hover {  
+      background-color: #0056b3; /* Darker on hover */  
+  }  
+  
+  /* Animations */  
+  @keyframes slideIn {  
+      from {  
+          opacity: 0;  
+          transform: translateY(20px);  
+      }  
+      to {  
+          opacity: 1;  
+          transform: translateY(0);  
+      }  
+  }  
+  
+  /* Headings */  
+  h1, h2 {  
+      margin: 20px 0; /* Spacing around headings */  
+  }  
+  
+  /* Results Container */  
+  .results-container {  
+      background-color: #000000;  
+      padding: 20px;  
+      border-radius: 8px;  
+      margin: 20px auto; /* Centering */  
+      max-width: 600px; /* Maximum width for results */  
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);  
+  }  
+  
+  /* Responsive styles */  
+  @media (max-width: 768px) {  
+      .navbar {  
+          flex-direction: column; /* Stack navbar items vertically on small screens */  
+      }  
+  
+      .navbar .nav-link {  
+          text-align: center; /* Center align links */  
+          padding: 1rem; /* Slightly more padding */  
+      }  
+  
+      .form-container,   
+      .results-container {  
+          width: 95%; /* Make forms/responses full width on smaller screens */  
+      }  
+  }
+  body {
+    background-color: #000000; /* Dark gray background */
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Add this to prevent scrolling */
+  }
+  
+  /* Add a new container for the moving background effect */
+  .moving-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to right, #333, #444, #555);
+    background-size: 300px 100vh;
+    animation: move-background 10s linear infinite;
+  }
+  
+  @keyframes move-background {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-300px);
+    }
+  }
+  
+  .navbar {
+    background-color: #000000; /* Darker gray background for navbar */
+    padding: 1rem;
+    display: flex;
+    justify-content: center; /* Center the navbar elements horizontally */
+    align-items: center; /* Center the navbar elements vertically */
+  }
+  
+  .navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center the navbar links horizontally */
+  }
+  
+  .navbar li {
+    margin-right: 20px;
+  }
+  
+  .nav-link {
+    color: #ffffff; /* White text color */
+    text-shadow: #000112;
+    padding: 10px 20px; /* Add padding to create a box around the link */
+    border-radius: 20px; /* Add a rounded corner effect */
+    transition: none; /* Remove transition effect */
+  }
+  
+  .nav-link:hover {
+    box-shadow: 0 0 10px #000112, 0 0 20px #fbfbfb, 0 0 30px #ffffff; /* White shining neon effect */
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  h1, p {
+    color: #fff; /* White text color */
+  }
+  
+  .login-container {
+    width: 500px;
+    background-color: #000000; /* Darker gray background for login container */
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 0 900px #8605e9;
+    margin: 100px auto;
+  }
+  
+  h1 {
+    text-decoration-color: #ffffff;
+    color: #ffffff; /* White text color */
+    text-align: center;
+  }
+  
+  label {
+    color: #68E905; /* White text color */
+  }
+  
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+  }
+  
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #68E905;
+    color: #000000;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #ffffff;
+  }
+  
+  p {
+    color: #ffffff; /* White text color */
+    text-align: center;
+  }
+  
+  a {
+    color: #ffffff; /* Blue text color */
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #ffffff;
+    text-shadow: #000447;
+  }
+  .pricing-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px;
+  }
+  
+  .pricing-plan {
+    background-color: #0001112;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 900px #000dff;
+    width: 250px;
+  }
+  
+  .pricing-plan h2 {
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  .pricing-plan p {
+    color: #fff;
+    text-align: center;
+  }
+  
+  .pricing-plan ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .pricing-plan li {
+    color: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #444;
+  }
+  
+  .pricing-plan li:last-child {
+    border-bottom: none;
+  }
+  
+  .btn {
+    background-color: #000112;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #000455;
+  }
+  .contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0 0 900px #000dff;
+    width: 500px;
+  }
+  
+  label {
+    color: #ffffff;
+    padding: 10px;
+  }
+  
+  input[type="text"], input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+  }
+  
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #000;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #ffffff;
+  }
+  
+  body {
+    margin: 0;
+    height: 100vh; /* Full viewport height */
+    overflow-y: auto; /* Allow vertical scrolling */
+    background: radial-gradient(circle, #600000, #000000,#3c0000); /* Darker gradient */
+    animation: ripple 7s ease-in-out infinite; /* Smoother ripple effect */
+    font-family: Arial, sans-serif; /* Consistent font */
+  }
+  
+  @keyframes ripple {
+    0% {
+      background-size: 0%;
+    }
+    50% {
+      background-size: 150%;
+    }
+    100% {
+      background-size: 0%;
+    }
+  }
+  
+  /* Content Styles */
+  .content {
+    position: relative; /* Keep the content above the background */
+    z-index: 1; /* Ensure content is above the background */
+    color: white; /* White text for contrast */
+    text-align: center; /* Center the text */
+    padding: 20px; /* Add some padding */
+    font-size: 24px; /* Increase font size */
+    transition: transform 0.3s ease; /* Smooth transition for transform changes */
+  }
+  
+  /* Smooth hover effect on content */
+  .content:hover {
+    transform: scale(1.02); /* Slightly enlarge content on hover */
+  }
+  
+  /* Optional: Headings */
+  h1 {
+    font-size: 36px; /* Large heading size */
+    margin-bottom: 10px; /* Space below heading */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Subtle glow effect */
+  }
+  
+  p {
+    font-size: 18px; /* Adjust paragraph size */
+    line-height: 1.5; /* Improve readability */
+    opacity: 0.8; /* Slightly transparent for softer appearance */
+    transition: opacity 0.3s ease; /* Smooth opacity transition */
+  }
+  
+  /* Hover effect on paragraphs */
+  .content:hover p {
+    opacity: 1; /* Fully visible on hover */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .content {
+      padding: 10px; /* Less padding on smaller screens */
+    }
+  
+    h1 {
+      font-size: 28px; /* Adjust heading size for smaller screens */
+    }
+  
+    p {
+      font-size: 16px; /* Adjust paragraph size */
+    }
+  }
+  
+  
+  
+  .glowing-effect {
+    position: absolute;
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    pointer-events: none; /* Prevent interaction */
+    transform: translate(-50%, -50%);
+    transition: background 0.3s ease;
+  }
+  
+  .js-generated {
+    /* Additional styles for JavaScript-generated elements */
+  }
+  .text {
+    color: #ffffff; /* Text color */
+    font-size: 20px; /* Font size */
+    font-style: italic; /* Italic style */
+    text-shadow: 
+      0 0 5px #000000, /* Subtle shadow for depth */
+      0 0 10px #ffffff, /* White glow */
+      0 0 20px #000000, /* Pink glow */
+      0 0 30px #000000; /* Stronger pink glow */
+    border-right: 2px solid #ffffff; /* Cursor effect */
+    display: inline-block; /* Inline block for cursor */
+    overflow: hidden; /* Hide overflow for typing effect */
+    white-space: nowrap; /* Prevent text wrapping */
+    animation: typing 4s steps(40, end) forwards, blink-caret 0.75s step-end infinite; /* Typing effect */
+  }
+  
+  @keyframes typing {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blink-caret {
+    0%, 100% {
+      border-color: transparent;
+    }
+    50% {
+      border-color: rgb(0, 0, 0);
+    }
+  }
+  /* General Reset */  
+  * {  
+    margin: 0;  
+    padding: 0;  
+    box-sizing: border-box;  
+  }  
+  
+  /* Body Style */  
+  body {  
+    /* margin: 0;   */
+    height: 100vh; /* Full viewport height */  
+    overflow-y: auto; /* Enable vertical scrolling */  
+    /* background: radial-gradient(circle, #001c3f, #000000); /* Background gradient */  
+    color: #ffffff; /* White text color */  
+    font-family: Arial, sans-serif;   */
+  }  
+  
+  /* Content Container Style */  
+  /* .container {  
+    max-height: 100%; /* Set a maximum height for the container */  
+    overflow-y: auto; /* Enable scrolling within the container */  
+    padding: 20px;  
+  } */
+  

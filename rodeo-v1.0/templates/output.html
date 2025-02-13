@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Output</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .caption {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Output</h1>
+    
+    {% if image_path %}
+        <h2>Changed Background Image:</h2>
+        <img src="{{ url_for('uploaded_file', filename='result.png') }}" alt="Result Image">
+        <br>
+        <a href="{{ url_for('uploaded_file', filename='result.png') }}">Download Result Image</a>
+    {% endif %}
+
+    {% if caption %}
+        <h2>Generated Caption:</h2>
+        <p class="caption">{{ caption }}</p>
+    {% endif %}
+
+    <br>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Ambience Webpage</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        
+        <ul>
+             <li><a href="index.html" class="nav-link">Home</a></li> 
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+            <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+            <li><a href="login.html" class="nav-link">Login</a></li>
+        </ul>
+        
+        
+        <ul>
+            <li><a class ="active" href="index.html">Home</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+        
+    </nav>
+    <main>
+        <input type="file" id="image-input" />
+        <button id="generate-caption-btn">Generate Caption</button>
+        <button id="remove-background-btn">Remove Background</button>
+        <button id="change-background-btn">Change Background</button>
+        <div id="output"></div>
+
+        <script src="/static/script.js"></script>
+    </main>
+</body>
+</html> -->
+
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Background Changer and Caption Generator</title>  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">  
+    <link rel="stylesheet" href="/static/style.css">  
+</head>  
+<body>  
+
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+            <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+            <li><a href="login.html" class="nav-link">Login</a></li>
+                
+        </ul>
+    </nav>
+     <div class="text">
+        <h1>Hey, Instagram Creators! Are you ready to take your posts to the next level?</h1>
+        <h2>Generate stunning captions that resonate with your audience and transform your backgrounds effortlessly.</h2>
+     </div>
+    <main class="container mt-4">  
+        <h1>Background Changer</h1>  
+        <div class="form-container mb-4">  
+            <form method="POST" enctype="multipart/form-data">  
+                <h2>Select Foreground Image</h2>  
+                <label for="foreground">Choose file</label>  
+                <input type="file" id="foreground" name="foreground" required>  
+
+                <h2>Select Background Image</h2>  
+                <label for="background">Choose file</label>  
+                <input type="file" id="background" name="background" required>  
+
+                <button type="submit" class="btn btn-primary mt-2">Change Background</button>  
+            </form>  
+        </div>  
+
+        <h1>Caption Generator</h1>  
+        <div class="form-container">  
+            <form method="POST" enctype="multipart/form-data">  
+                <h2>Select Image for Caption Generation</h2>  
+                <label for="image">Choose file</label>  
+                <input type="file" id="image" name="image" required>  
+                <button type="submit" class="btn btn-primary mt-2">Generate Caption</button>  
+            </form>  
+        </div>  
+    </main>  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>  
+    <script src="C:\Users\jayesh777\OneDrive\Desktop\thaaproject2\static\script.js"></script>
+</body>  
+</html>

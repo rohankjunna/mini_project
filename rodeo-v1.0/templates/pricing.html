@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <!-- <li><a href="index.html" class="nav-link">Home</a></li> -->
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a class="nav-link" href="pricing.html">Pricing</a></li>
+            <li><a class="nav-link" href="contact.html">Contact Us</a></li>
+            <li><a class="nav-link" href="login.html">Login</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Pricing</h1>
+        <div class="pricing-container">
+            <div class="pricing-plan">
+                <h2>Basic</h2>
+                <p>$9.99/month</p>
+                <ul>
+                    <li>1 User</li>
+                    <li>10GB Storage</li>
+                    <li>Basic Support</li>
+                </ul>
+                <button class="btn">Sign Up</button>
+            </div>
+            <div class="pricing-plan">
+                <h2>Premium</h2>
+                <p>$19.99/month</p>
+                <ul>
+                    <li>5 Users</li>
+                    <li>50GB Storage</li>
+                    <li>Premium Support</li>
+                </ul>
+                <button class="btn">Sign Up</button>
+            </div>
+            <div class="pricing-plan">
+                <h2>Enterprise</h2>
+                <p>Custom Pricing</p>
+                <ul>
+                    <li>Unlimited Users</li>
+                    <li>Unlimited Storage</li>
+                    <li>Premium Support</li>
+                </ul>
+                <button class="btn">Contact Us</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
